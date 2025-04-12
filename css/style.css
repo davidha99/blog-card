@@ -1,15 +1,89 @@
 /* Put any custom CSS styles here.  */
 /* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+  font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
-  min-height: 100vh;
 
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* background: linear-gradient(90deg, hsl(210, 20, 98) 0%, hsl(213, 11, 84) 100%); */
+  background: linear-gradient(135deg, #f9fafb 0%, #d2d6db 100%);
 }
 
 * {
@@ -28,4 +102,88 @@ body {
 .credits a {
   color: #000;
   font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.card {
+  margin: 0 auto;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  object-fit: cover;
+}
+
+.card-info {
+  background: white;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.card-tag {
+  background-color: hsl(138deg, 76%, 97%);
+  color: hsl(142deg, 72%, 29%);
+  padding: 2px 8px;
+  border: 1px solid hsl(141deg, 79%, 85%);
+  border-radius: 999em;
+  font-size: calc(12 / 16 * 1rem);
+}
+
+.card-title {
+  font-size: calc(18 / 16 * 1rem);
+  font-weight: 600;
+  color: hsl(0deg, 0%, 9%);
+}
+
+.card-description {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-description p {
+  color: hsl(0deg, 0%, 32%);
+  font-weight: 500;
+}
+
+.read-more {
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: hsl(245deg, 58%, 51%);
+}
+
+.arrow-right-line {
+  width: 20px;
+  height: 20px;
+  font-weight: 500;
 }
